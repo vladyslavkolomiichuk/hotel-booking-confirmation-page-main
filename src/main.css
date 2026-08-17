@@ -1,0 +1,210 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/assets/fonts/dm-sans/DMSans-VariableFont_opsz,wght.ttf')
+    format('truetype');
+  font-weight: 400 600;
+}
+
+@font-face {
+  font-family: 'DM Mono';
+  src: url('/assets/fonts/dm-mono/DMMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'DM Mono';
+  src: url('/assets/fonts/dm-mono/DMMono-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Fraunces';
+  src: url('/assets/fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf')
+    format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fraunces';
+  src: url('/assets/fonts/fraunces/Fraunces-Italic-VariableFont_SOFT,WONK,opsz,wght.ttf')
+    format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@theme {
+  /* Colors */
+  --color-neutral-900: hsl(33, 15%, 15%);
+  --color-neutral-800: hsl(33, 22%, 20%);
+  --color-neutral-700: hsl(32, 20%, 29%);
+  --color-neutral-600: hsl(33, 17%, 41%);
+  --color-neutral-400: hsl(36, 22%, 86%);
+  --color-neutral-200: hsl(30, 24%, 93%);
+  --color-neutral-100: hsl(35, 60%, 96%);
+  --color-neutral-50: hsl(40, 60%, 98%);
+  --color-neutral-0: hsl(0, 0%, 100%);
+
+  --color-sun-500: hsl(42, 83%, 58%);
+  --color-sun-300: hsl(44, 84%, 75%);
+  --color-sun-200: hsl(45, 100%, 74%);
+  --color-sun-50: hsl(41, 100%, 93%);
+
+  --color-terracotta-700: hsl(15, 69%, 37%);
+  --color-terracotta-600: hsl(15, 74%, 41%);
+  --color-terracotta-500: hsl(18, 62%, 47%);
+  --color-terracotta-400: hsl(22, 72%, 56%);
+
+  --color-blue-500: hsl(230, 49%, 56%);
+
+  --color-rose-500: hsl(340, 48%, 52%);
+
+  /* Fonts */
+  --font-sans: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --font-fraunces: 'Fraunces', serif;
+
+  /* Spacing */
+  --spacing-0: 0px;
+  --spacing-025: 2px;
+  --spacing-050: 4px;
+  --spacing-075: 6px;
+  --spacing-100: 8px;
+  --spacing-125: 10px;
+  --spacing-150: 12px;
+  --spacing-200: 16px;
+  --spacing-250: 20px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+  --spacing-600: 48px;
+  --spacing-800: 64px;
+  --spacing-1000: 80px;
+  --spacing-1200: 96px;
+  --spacing-1400: 112px;
+  --spacing-1600: 128px;
+  --spacing-1800: 140px;
+
+  /* Radius */
+  --radius-0: 0px;
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+  --radius-24: 24px;
+  --radius-full: 999px;
+}
+
+/* Text presets */
+@utility text-preset-1 {
+  font-family: var(--font-fraunces);
+  font-size: 40px;
+  line-height: 120%;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+}
+@utility text-preset-1-italic {
+  font-family: var(--font-fraunces);
+  font-size: 40px;
+  line-height: 120%;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+  font-style: italic;
+}
+@utility text-preset-2 {
+  font-family: var(--font-fraunces);
+  font-size: 32px;
+  line-height: 120%;
+  letter-spacing: -0.25px;
+  font-weight: 400;
+}
+@utility text-preset-3 {
+  font-family: var(--font-fraunces);
+  font-size: 24px;
+  line-height: 140%;
+  letter-spacing: -0.2px;
+  font-weight: 400;
+}
+@utility text-preset-4 {
+  font-family: var(--font-fraunces);
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: -0.1px;
+  font-weight: 400;
+}
+@utility text-preset-4-italic {
+  font-family: var(--font-fraunces);
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: -0.1px;
+  font-weight: 400;
+  font-style: italic;
+}
+@utility text-preset-5 {
+  font-family: var(--font-fraunces);
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+@utility text-preset-5-medium {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 0px;
+  font-weight: 500; /* medium */
+}
+@utility text-preset-5-semibold {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 0.3px;
+  font-weight: 600; /* semibold */
+}
+@utility text-preset-6 {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 2px;
+  font-weight: 500; /* medium */
+}
+@utility text-preset-7 {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 120%;
+  letter-spacing: 0.4px;
+  font-weight: 400;
+}
+@utility text-preset-8 {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 140%;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+@utility text-preset-9 {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 140%;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+@utility text-preset-10 {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 140%;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+@utility text-preset-11 {
+  font-family: var(--font-fraunces);
+  font-size: 10px;
+  line-height: 140%;
+  letter-spacing: 1px;
+  font-weight: 500; /* medium */
+}
