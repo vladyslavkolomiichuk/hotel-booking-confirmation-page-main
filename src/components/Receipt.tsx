@@ -1,10 +1,13 @@
+import { HTMLAttributes } from 'react';
 import IconBarcode from '../../assets/images/icon-barcode.svg';
 
-const Receipt = () => {
+type ReceiptProps = HTMLAttributes<HTMLElement>;
+
+const Receipt = ({ ...props }: ReceiptProps) => {
   return (
     <article
-      className="p-300 mt-125 md:m-0 bg-neutral-50 rounded-20 flex flex-col gap-250 h-[420px] w-[327px] md:w-[340px] xl:w-[400px] transform-3d -rotate-z-2 md:-rotate-z-4
-    shadow-[0_1px_1px_rgba(0,0,0,0.03),0_16px_30px_rgba(62,44,30,0.35),0_20px_40px_rgba(62,44,30,0.16)]"
+      className={`p-300 mt-125 md:m-0 bg-neutral-50 rounded-20 flex flex-col gap-250 h-[420px] w-[327px] md:w-[340px] xl:w-[400px] transform-3d -rotate-z-2 md:-rotate-z-4
+    shadow-[0_1px_1px_rgba(0,0,0,0.03),0_16px_30px_rgba(62,44,30,0.35),0_20px_40px_rgba(62,44,30,0.16)] ${props.className}`}
     >
       <div className="flex justify-between text-preset-10 text-neutral-600 uppercase pb-150 border-b border-neutral-400 w-full border-dashed">
         <div>

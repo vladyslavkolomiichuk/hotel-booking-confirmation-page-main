@@ -1,10 +1,13 @@
+import { HTMLAttributes } from 'react';
 import IconSun from '../../assets/images/icon-sun.svg';
 
-const WelcomeCard = () => {
+type WelcomeCardProps = HTMLAttributes<HTMLElement>;
+
+const WelcomeCard = ({ ...props }: WelcomeCardProps) => {
   return (
     <article
-      className="p-300 z-10 bg-[radial-gradient(circle_at_100%_0%,_var(--color-terracotta-400)_0%,_var(--color-terracotta-500)_50%,_var(--color-terracotta-700)_100%)] rounded-20 flex flex-col gap-250 h-[420px] w-[327px] md:w-[340px] xl:w-[400px] transform-3d rotate-z-2 md:rotate-z-4
-    shadow-[0_20px_40px_rgba(192,90,46,0.55),0_50px_80px_rgba(169,66,31,0.45)]"
+      className={`p-300 z-10 bg-[radial-gradient(circle_at_100%_0%,_var(--color-terracotta-400)_0%,_var(--color-terracotta-500)_50%,_var(--color-terracotta-700)_100%)] rounded-20 flex flex-col gap-250 h-[420px] w-[327px] md:w-[340px] xl:w-[400px] transform-3d rotate-z-2 md:rotate-z-4
+    shadow-[0_20px_40px_rgba(192,90,46,0.55),0_50px_80px_rgba(169,66,31,0.45)] ${props.className}`}
     >
       <div className=" border border-terracotta-400 w-full border-dashed" />
 

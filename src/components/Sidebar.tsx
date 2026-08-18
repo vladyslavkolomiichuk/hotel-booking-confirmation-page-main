@@ -8,6 +8,7 @@ import IconButton from './IconButton';
 import IconClose from '../../assets/images/icon-close.svg';
 import WeatherWidget from './WeatherWidget';
 import Header from './Header';
+import { Dispatch, HTMLAttributes, SetStateAction } from 'react';
 
 export type NavItemData = {
   name: string;
@@ -49,16 +50,28 @@ const navItems: NavItemData[] = [
   },
 ];
 
-const Sidebar = () => {
+type SidebarProps = HTMLAttributes<HTMLElement> & {
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+};
+
+const Sidebar = ({ isOpen, setIsOpen, ...props }: SidebarProps) => {
   return (
-    <div className=" fixed h-screen w-screen bg-neutral-900/90 z-50 xl:invisible">
-      <aside className=" fixed bg-neutral-100 h-screen p-200 md:px-300 md:py-200 xl:px-200 xl:py-250 flex flex-col gap-200 w-[320px] md:w-[384px] xl:w-[260px] xl:visible xl:border-r border-neutral-400">
+    <>
+      <div
+        className={`fixed h-screen w-screen z-50 transition-colors duration-300 ease-in xl:invisible ${isOpen ? 'bg-neutral-900/90 visible' : 'bg-transparent collapse'}`}
+        onClick={() => setIsOpen(false)}
+      />
+      <aside
+        className={`fixed bg-neutral-100 h-screen p-200 md:px-300 md:py-200 xl:px-200 xl:py-250 flex flex-col z-50 gap-200 w-[320px] md:w-[384px] xl:w-[260px] xl:visible ${props.className} xl:border-r border-neutral-400 transition-transform duration-300 ease-in transform-3d`}
+      >
         <Header
           button={
             <IconButton
               icon={IconClose}
               label={'Close menu'}
               className="xl:collapse"
+              onClick={() => setIsOpen(false)}
             />
           }
         />
@@ -89,7 +102,7 @@ const Sidebar = () => {
           <p>© 2026 Maison Soleil</p>
         </footer>
       </aside>
-    </div>
+    </>
   );
 };
 
